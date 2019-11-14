@@ -1,0 +1,19 @@
+.sidebar {
+    background-color: #f3f3f3;
+    padding: 0.6rem;
+    margin: 1rem;
+    border-radius: 5px;
+    max-width: 10rem;
+    max-height: 20rem;
+    text-align: center;
+}
+
+.tag-pill {
+    background-color: #818a91;
+    color: white;
+    padding: .2rem .5rem;
+    margin: .2rem;
+    border-radius: 12px;
+    display: inline-block;
+    cursor: pointer;
+}

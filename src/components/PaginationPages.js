@@ -1,5 +1,5 @@
 import React from "react";
-import "./PaginationPages.css";
+import "./PaginationPages.scss";
 
 const PaginationPages = ({ articlesPerPage, totalArticles, paginate }) => {
   const pageNumbers = [];
@@ -8,18 +8,20 @@ const PaginationPages = ({ articlesPerPage, totalArticles, paginate }) => {
     pageNumbers.push(i);
   }
 
-//   console.log(pageNumbers)
+  //   console.log(pageNumbers)
 
-//   const paginationNumbers = Array.from({length: Math.ceil(totalArticles / articlesPerPage)}, (v, k) => k + 1); 
-//   console.log(paginationNumbers)
-
+  //   const paginationNumbers = Array.from({length: Math.ceil(totalArticles / articlesPerPage)}, (v, k) => k + 1);
+  //   console.log(paginationNumbers)
 
   return (
     <nav>
       <ul className="article-pages">
         {pageNumbers.map(number => (
           <li key={number} className="article-pages-item">
-            <button onClick={() => paginate(number)} className="article-pages-link">
+            <button
+              onClick={() => paginate(number)}
+              className="article-pages-link"
+            >
               {number}
             </button>
           </li>

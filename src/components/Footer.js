@@ -1,11 +1,11 @@
 import React from "react";
-import "./Footer.css";
+import "./Footer.scss";
 
 const Footer = () => {
   return (
     <div className="footer">
       <p>Powered by News API</p>
-      <a href="www.newsapi.org">News API</a>
+      <a href="https://newsapi.org/">News API</a>
     </div>
   );
 };

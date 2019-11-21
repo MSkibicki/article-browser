@@ -1,0 +1,16 @@
+.pagination {
+  flex-grow: 1;
+  margin: 1rem;
+  padding: 0.6rem;
+  max-width: 75%;
+
+  .pagination-articles {
+    width: 90%;
+    border-bottom: 2px solid blueviolet;
+    padding: 0.6rem;
+    margin-left: 2.7rem;
+    font-size: 2.5rem;
+    letter-spacing: 0.1rem;
+    color: blueviolet;
+  }
+}

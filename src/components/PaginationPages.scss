@@ -1,0 +1,24 @@
+.article-pages {
+  display: flex;
+  list-style: none;
+  justify-content: center;
+
+  .article-pages-link {
+    cursor: pointer;
+    color: blueviolet;
+    padding: 0.5rem 0.65rem;
+    border: 1px solid #ddd;
+    text-decoration: none;
+    background-color: #fff;
+    border-radius: 2px;
+  }
+
+  .article-pages-link:hover {
+    background-color: rgba(138, 43, 226, 0.1);
+  }
+
+  .article-pages-link:focus {
+    background-color: rgba(138, 43, 226, 1);
+    color: #fff;
+  }
+}

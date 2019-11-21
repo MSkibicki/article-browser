@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import "./Pagination.css";
+import "./Pagination.scss";
 import Articles from "./Articles";
 import PaginationPages from "./PaginationPages";
 
@@ -8,7 +8,7 @@ const Pagination = () => {
   const [articles, setArticles] = useState([]);
   const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
-  const [articlesPerPage] = useState(20);
+  const [articlesPerPage] = useState(4);
 
   useEffect(() => {
     const fetchArticles = async () => {
@@ -16,7 +16,7 @@ const Pagination = () => {
         const API_KEY = "bab5a491a1c9462aab6d8aba66797a23";
     //   const res = await axios.get("https://jsonplaceholder.typicode.com/posts");
         const res = await axios.get(`https://newsapi.org/v2/everything?q=bitcoin&pagesize=100&apiKey=${API_KEY}`);
-        console.log(res);
+        // console.log(res);
         setArticles(res.data.articles);
     //   setArticles(res.data);
       setLoading(false);
@@ -35,7 +35,7 @@ const Pagination = () => {
 
   return (
     <div className="pagination">
-      <h1>Articles</h1>
+      <h1 className="pagination-articles">Articles</h1>
       <Articles articles={currentArticles} loading={loading} />
       <PaginationPages
         articlesPerPage={articlesPerPage}

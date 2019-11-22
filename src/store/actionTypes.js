@@ -1,0 +1,4 @@
+export const FETCH_ARTICLES = "FETCH_ARTICLES";
+export const START_LOADING = "START_LOADING";
+export const STOP_LOADING = "STOP_LOADING";
+export const SET_ARTICLES = "SET_ARTCILES";

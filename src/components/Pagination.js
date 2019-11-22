@@ -1,26 +1,17 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
 import "./Pagination.scss";
 import Articles from "./Articles";
 import PaginationPages from "./PaginationPages";
+import { connect } from "react-redux";
+import { fetchArticles } from "../store/actionCreators";
 
-const Pagination = () => {
+const Pagination = ({fetchArticles}) => {
   const [articles, setArticles] = useState([]);
   const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const [articlesPerPage] = useState(4);
 
   useEffect(() => {
-    const fetchArticles = async () => {
-      setLoading(true);
-        const API_KEY = "bab5a491a1c9462aab6d8aba66797a23";
-    //   const res = await axios.get("https://jsonplaceholder.typicode.com/posts");
-        const res = await axios.get(`https://newsapi.org/v2/everything?q=bitcoin&pagesize=100&apiKey=${API_KEY}`);
-        // console.log(res);
-        setArticles(res.data.articles);
-    //   setArticles(res.data);
-      setLoading(false);
-    };
     fetchArticles();
   }, []);
 
@@ -46,4 +37,8 @@ const Pagination = () => {
   );
 };
 
-export default Pagination;
+const mapDispatchToProps = dispatch => ({
+  fetchArticles: () => dispatch(fetchArticles())
+});
+
+export default connect(null, mapDispatchToProps)(Pagination);

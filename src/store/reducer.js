@@ -1,8 +1,11 @@
 import * as actionTypes from "./actionTypes";
 
-const initialState = {
+export const initialState = {
   articles: [],
-  loading: false
+  loading: false,
+  pageNumbers: null,
+  currentPage: 1,
+  articlesPerPage: 4
 };
 
 const reducer = (state = initialState, action) => {
@@ -20,8 +23,18 @@ const reducer = (state = initialState, action) => {
     case actionTypes.SET_ARTICLES:
       return {
         ...state,
-        articles: action.payload
+        articles: action.articles
       };
+    case actionTypes.SET_PAGE_NUMBERS:
+      return {
+        ...state,
+        pageNumbers: action.paginationNumbers
+      };
+    case actionTypes.SET_CURRENT_PAGE: 
+    return {
+      ...state,
+      currentPage: action.page
+    };
     default: {
       return state;
     }

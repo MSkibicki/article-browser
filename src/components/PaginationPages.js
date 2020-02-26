@@ -1,34 +1,34 @@
 import React from "react";
 import "./PaginationPages.scss";
+import { setCurrentPage } from "../store/actionCreators";
+import { connect } from "react-redux";
 
-const PaginationPages = ({ articlesPerPage, totalArticles, paginate }) => {
-  const pageNumbers = [];
-
-  for (let i = 1; i <= Math.ceil(totalArticles / articlesPerPage); i++) {
-    pageNumbers.push(i);
-  }
-
-  //   console.log(pageNumbers)
-
-  //   const paginationNumbers = Array.from({length: Math.ceil(totalArticles / articlesPerPage)}, (v, k) => k + 1);
-  //   console.log(paginationNumbers)
-
+const PaginationPages = ({ pageNumbers, setCurrentPage }) => {
   return (
     <nav>
       <ul className="article-pages">
-        {pageNumbers.map(number => (
-          <li key={number} className="article-pages-item">
-            <button
-              onClick={() => paginate(number)}
-              className="article-pages-link"
-            >
-              {number}
-            </button>
-          </li>
-        ))}
+        {pageNumbers &&
+          Array.from({ length: pageNumbers }, (_, k) => k + 1).map(page => (
+            <li key={page} className="article-pages-item">
+              <button
+                onClick={() => setCurrentPage(page)}
+                className="article-pages-link"
+              >
+                {page}
+              </button>
+            </li>
+          ))}
       </ul>
     </nav>
   );
 };
 
-export default PaginationPages;
+const mapStateToProps = state => ({
+  pageNumbers: state.pageNumbers
+});
+
+const mapDispatchToProps = dispatch => ({
+  setCurrentPage: page => dispatch(setCurrentPage(page))
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(PaginationPages);

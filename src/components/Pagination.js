@@ -8,7 +8,7 @@ import { fetchArticles } from "../store/actionCreators";
 const Pagination = ({fetchArticles}) => {
   useEffect(() => {
     fetchArticles();
-  }, []);
+  });
   
   return (
     <div className="pagination">

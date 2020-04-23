@@ -30,11 +30,11 @@ const Articles = ({ articles, loading, articlesPerPage, currentPage }) => {
   );
 };
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   articles: state.articles,
   loading: state.loading,
   articlesPerPage: state.articlesPerPage,
-  currentPage: state.currentPage
+  currentPage: state.currentPage,
 });
 
 export default connect(mapStateToProps)(Articles);

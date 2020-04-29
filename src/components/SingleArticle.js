@@ -2,20 +2,14 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 
-const SingleArticlePage = ({
-  articles,
-  match: {
-    params: { id },
-  },
-}) => {
-
+const SingleArticle = ({ articles, id }) => {
   const [pageArticles, setPageArticles] = useState({});
 
   useEffect(() => {
     setPageArticles(articles[id]);
   }, [articles, id]);
 
-  console.log(pageArticles);
+  //   console.log(id);
 
   return (
     <div>
@@ -33,4 +27,4 @@ const mapStateToProps = (state) => ({
   articles: state.articles,
 });
 
-export default connect(mapStateToProps)(SingleArticlePage);
+export default connect(mapStateToProps)(SingleArticle);

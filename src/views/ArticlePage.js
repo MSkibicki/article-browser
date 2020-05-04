@@ -1,24 +1,20 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { connect } from "react-redux";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
+import SingleArticle from "../components/SingleArticle";
 
 const ArticlePage = ({
-  articles,
   match: {
-    params: { id }
-  }
+    params: { id },
+  },
 }) => {
-  console.log(articles[id]);
   return (
-    <div>
-      <h1>hello from article.</h1>
-      <Link to="/">back</Link>
-    </div>
+    <>
+      <Navbar />
+      <SingleArticle id={id} />
+      <Footer />
+    </>
   );
 };
 
-const mapStateToProps = state => ({
-  articles: state.articles
-});
-
-export default connect(mapStateToProps)(ArticlePage);
+export default ArticlePage;

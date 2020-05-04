@@ -15,11 +15,14 @@ const Articles = ({ articles, loading, articlesPerPage, currentPage }) => {
     return <h1>Loading...</h1>;
   }
 
+  console.log(articles);
+  console.log(currentArticles);
+
   return (
     <ul className="article-list">
       {currentArticles.map((article, index) => (
-        <Link to={`article/${index}`}>
-          <li key={index} className="article-list-item">
+        <Link key={index} to={`article/${index}`}>
+          <li className="article-list-item">
             <h1>{article.title}</h1>
             <p>{article.description}</p>
             <p className="article-list-item-author">- {article.author}</p>
@@ -30,11 +33,11 @@ const Articles = ({ articles, loading, articlesPerPage, currentPage }) => {
   );
 };
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   articles: state.articles,
   loading: state.loading,
   articlesPerPage: state.articlesPerPage,
-  currentPage: state.currentPage
+  currentPage: state.currentPage,
 });
 
 export default connect(mapStateToProps)(Articles);

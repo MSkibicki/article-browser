@@ -1,0 +1,59 @@
+.single-article {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+
+  .single-article-title {
+    width: 90%;
+    text-align: center;
+    margin-top: 30px;
+    font-size: 34px;
+  }
+
+  .single-article-author-group {
+    display: flex;
+    align-self: flex-start;
+    flex-direction: column;
+    margin-left: 110px;
+
+    .single-article-author {
+      margin-bottom: 10px;
+    }
+
+    .single-article-date {
+      font-size: 12px;
+      margin-bottom: 50px;
+    }
+  }
+
+  .single-article-img-group {
+    display: flex;
+
+    .single-article-img {
+      width: 45vw;
+    }
+
+    .single-article-paragraph {
+      padding: 15px 40px;
+      width: 30vw;
+      font-size: 19px;
+    }
+  }
+
+  .single-article-button {
+    color: blueviolet;
+    padding: 1rem 0.8rem;
+    border: 1px solid #ddd;
+    text-decoration: none;
+    background-color: #fff;
+    border-radius: 2px;
+    width: 10%;
+    text-align: center;
+    margin: 1.5rem;
+  }
+
+  .single-article-button:hover {
+    background-color: #ddd;
+  }
+}
